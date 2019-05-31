@@ -62,5 +62,9 @@ class authController extends Controller
 		}else{
                 return redirect('login')->with('username','Username Salah !');
 		}    	 
-    }
+		}
+		public function logout(){
+			Session::flush();
+			return redirect('/');
+		}
 }

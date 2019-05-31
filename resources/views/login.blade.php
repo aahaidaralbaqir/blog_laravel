@@ -35,7 +35,7 @@
 		</div>
 		<div class="form-group row"	>
 			<label class="form-label col-sm-2">Password</label>
-			<input type="text" name="password" class="form-control col-sm-9">
+			<input type="password" name="password" class="form-control col-sm-9">
 		</div>
 		<div class="form-group">
 			<input type="submit" name="login" class="btn btn-primary" value="Login">

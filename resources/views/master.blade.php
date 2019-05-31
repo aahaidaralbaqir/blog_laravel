@@ -5,9 +5,12 @@
 </head>
 <style>
 </style>
-<body>
+<body style="background-color:#f7f7f7;">
 	
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-dark p-3" style="background: #00B4DB;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
 	<div class="container">
 	<a class="navbar-brand" href="/">Laravel Blog</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,27 +24,13 @@
 				<a class="nav-link" href="#">Beranda<span class="sr-only">(current)</span></a>
 			</li>
 
-			<li class="nav-item">
-				<a class="nav-link" href="#">Catatan</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Tutorial
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="#">Action</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#">Something else here</a>
-				</div>
-			</li>
 		@endif
 		@if(Session::get('login'))
 		<li class="nav-item active">
 			<a href="/admin" class="nav-link">Beranda</a>
 		</li>
 		<li class="nav-item">
-			<a href="/admin/tutorial" class="nav-link">Tutorial</a>
+			<a href="/admin/blog" class="nav-link">Blog</a>
 		</li>
 		@endif	
 		</ul>
@@ -50,15 +39,15 @@
 				<a class="btn btn-primary" href="/login">Login</a> <a class="btn btn-danger" href="/register"> Register</a>
 			@endif
 			@if(Session::get("login"))
-				<a href="" class="btn btn-danger">Keluar</a>
+				<a href="/logout" class="btn btn-danger">Keluar</a>
 			@endif			
 		</form>
 	</div>
 	</div>
 	</nav>
 
-	<div class="container">
-		<h1 class="mt-5">@yield('judul')</h1>
+	<div class="container" >
+		<h1 class="mt-4 mb-4">@yield('judul')</h1>
 		<div class="row">@yield('konten')</div>
 	</div>
 	
